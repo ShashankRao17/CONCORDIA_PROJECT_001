@@ -52,11 +52,19 @@ public class RiskReinforcementPhase
      
 	public static int armyCalculationPerPlayer(int playerID, int noOfCountriesOwned, int noOfPlayers,int totalCountriesInContinent)
 	{
+		HashMap<String, HashMap<String, String>> map = new HashMap<>();
+
+		map.put("Player1", new HashMap(){{put("India","Pakistan");}});
+		map.put("Player2", new HashMap(){{put("Canada","USA");}});
+
+		System.out.println(map.get("Player1").size());	
+		noOfCountriesOwned = map.get("Player1").size();
 		
 		System.out.println("Reinforcement: PlayerID"+playerID+"ownes Number Of Countries"+noOfCountriesOwned);
 		if(noOfCountriesOwned != totalCountriesInContinent)
 		{
 		noOfArmiesForPlayer = noOfCountriesOwned/noOfPlayers;
+		//Assign armies to countries
 		System.out.println("Number of Armies owned by Player"+playerID+"is"+noOfArmiesForPlayer);
 		}
 		else
@@ -64,9 +72,13 @@ public class RiskReinforcementPhase
 			noOfArmiesForPlayer = totalCountriesInContinent; //TODO
 			System.out.println("Number of Armies owned by Player"+playerID+"is"+"CONTINENTS CONTROL VALUE");
 		}
-		
-		
+		assignArmyToPlayer(playerID,noOfArmiesForPlayer);
 		return noOfArmiesForPlayer;
+	}
+	public static void assignArmyToPlayer(int playerID,int noOfArmiesForPlayer)
+	{
+		HashMap<Integer, Integer> PlayerArmyMap = new HashMap<Integer, Integer>();
+		PlayerArmyMap.put(playerID, noOfArmiesForPlayer); 
 	}
 	/**
 	 * Iteration 2

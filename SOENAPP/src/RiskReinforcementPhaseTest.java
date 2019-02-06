@@ -1,6 +1,8 @@
 import static org.junit.Assert.assertEquals;
 import static org.junit.jupiter.api.Assertions.*;
-import org.junit.jupiter.api.Test;
+
+import org.junit.Test;
+
 /**
  * The Junit Test Classclass defines number of the armies given to the player calculation.
  * In the reinforcements phase, the player is given a number of armies that depends on the 
